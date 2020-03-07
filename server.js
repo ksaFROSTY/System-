@@ -382,7 +382,8 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
         ***__ViP orders__***
 **
 『welcome/ مثل بروبوت اسم روم ولكم』
-『!/』
+『!togglelog/لتفعيل اللوق』
+『!setLog/تحديد روم لوق』
 『?rps / لعبة حجرة ورقة مقص 』
 『?اسئلة للعبة فورت نايت /  فورت نايت 』
 **
@@ -649,8 +650,37 @@ client.on("guildMemberAdd", member => {
   });
 });
 
+//online voice 
 
+ var voiceonline = require ("./voiceonline.json");
+client .on ("message", async (Message) => {
+    if (!Message ["guild"] ||
+    Message ["author"].bot) return false;
+    if (Message ["content"].startsWith (prefix + "setvc")) {
+        if (!Message ["member"].hasPermission ("MANAGE_CHANNELS")) return Message ["reply"] ("**You need `MANAGE CHANNELS` Permissions to execute this command.**");
+        var name = Message ["content"].split (" ").slice (1).join (" ");
+        if (!name) return Message ["reply"] ("**Specify a name. please type %vo% for Connected numbers\nExample: " + prefix + "setvc 💠S3 Online💠 [%vo%]**");
+        var onlines = Message ["guild"].members.filter (m => m.voiceChannel).size;
+        Message ["guild"].createChannel (name ["replace"] ("%vo%", onlines), "voice") .then (async (voice) => {
+            voiceonline [Message ["guild"].id] = {
+                "ch": (voice ["id"]),
+                "name": (name)
+            };
+            saveVoiceOnline ();
+            Message ["channel"].send ("**Successfully created voiceonline **")
+        });
+    }
+})
+.on ("voiceStateUpdate", async (Steve, Akame) => {
+    if (!voiceonline [Steve ["guild"].id]) return console.log ("nope");
+    var channel = Akame ["guild"].channels.get (voiceonline [Steve ["guild"].id].ch);
+    if (!channel) return console.log ("no channel");
+    channel ["setName"] (voiceonline [Steve ["guild"].id].name.replace ("%vo%", Steve ["guild"].members.filter (m => m.voiceChannel).size));
+})
 
+function saveVoiceOnline() {
+    (require ("fs")) ["writeFileSync"] ("./voiceonline.json", JSON ["stringify"] (voiceonline, null, 4))
+}
 
 
 //Log
