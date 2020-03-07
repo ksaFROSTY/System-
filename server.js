@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`https://wandering-autumn-painter.glitch.me`);
+  http.get(`https://.glitch.me`);
 }, 280000);
 
 // كل البكجات الي ممكن تحتجها في اي بوت
@@ -47,7 +47,7 @@ client.on("ready", () => {
 
 //كود للتجربة
 
-console.log("3bker");
+console.log("FROSTY");
 client.on("message", message => {
   if (message.content.startsWith(prefix + "bc")) {
     if (!message.member.hasPermission("ADMINISTRATOR")) return;
@@ -356,45 +356,33 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
         ***__General orders__***
 **
 『!server /يعرض لك معلومات السيرفر 』
-
-『/ يعرض لك معلومات عنك』
-『?myroles / لرؤية جميع رتبك الشخصية بالسيرفر』
-『?id / يعرض لك معلومات عنك』
-『?link / لمعمل انفايت ( دعوة ) لشخص』
-『?inv / لدعوة البوت الى سيرفرك』
-『?support / سيرفر المساعدة』
-『?cmind / لكتابة اي شيء تقوله داخل صورة』
-『?servavatar / لرؤية صورة السيرفر』
-『?count / لرؤية عدد الاعضاء بالسيرفر』
-『?avatar / لرؤية صورة شخص 』
-『?bot-info / لرؤية معلومات عن البوت 』
-『?report / لرفع شكوى على عضو 』
-『?servers / لرؤية عدد السيرفرات التي داخل بها البوت 』
-『?myid / لمعرفة الايدي الخاص بك 』
+『!id / يعرض لك معلومات عنك』
+『!inv / لدعوة البوت الى سيرفرك』
+『!color/عرض قائمة الألوان 』
+『!colors/اختار رقم اللون』
+『!top/عرض قائمة توب سيرفر 』
+『!avatar/روئة صورتك』
+『!giveaway/قيف اوى』
 **
   `
 ,`
         ***__Admin orders__***
 **
-『?clear / لحذف الشات 』
-『?mc / لقفل الشات  』
-『?unmc / لفتح الشات 』
-『?bc / لارسال رسالة لجميع اعضاء السيرفر 』
-『?kick / لطرد شخص من الدسكورد 』
-『?ban / لاعطاء شخص باند من الدسكورد 』
-『?mute / لاعطاء شخص ميوت 』
-『?unmute / لفك ميوت شخص 』
-『?ct / لانشاء روم كتابي 』
-『?cv / لانشاء روم صوتي 』
-『?rolebc / برود كاست للرتب 』
+『!clear / لحذف الشات 』
+『!mc / لقفل الشات  』
+『!unmc / لفتح الشات 』
+『!bc / لارسال رسالة لجميع اعضاء السيرفر 』
+『!kick / لطرد شخص من الدسكورد 』
+『!ban / لاعطاء شخص باند من الدسكورد 』
+『!mute / لاعطاء شخص ميوت 』
+『!role/عطاء رول 』
 **
   `
 ,`
-        ***__Games orders__***
+        ***__ViP orders__***
 **
-『?لعبة صراحة / صراحة 』
-『?لعبة كت تويت / كت تويت 』
-『?لعبة لو خيروك / لو خيروك』
+『welcome/ مثل بروبوت اسم روم ولكم』
+『!/』
 『?rps / لعبة حجرة ورقة مقص 』
 『?اسئلة للعبة فورت نايت /  فورت نايت 』
 **
