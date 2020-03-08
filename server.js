@@ -681,6 +681,40 @@ client .on ("message", async (Message) => {
 function saveVoiceOnline() {
     (require ("fs")) ["writeFileSync"] ("./voiceonline.json", JSON ["stringify"] (voiceonline, null, 4))
 }
+//فتح الشات وقفل الشات
+
+client.on('message', message => {
+
+    if(message.content === `${prefix}mc`) {
+                        if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
+
+if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(' ** You don't have `MANAGE_CHANNELS` permission **');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: false
+
+           }).then(() => {
+               message.reply("** ✅ | Done.  **")
+           });
+             }
+
+ if(message.content === `${prefix}unmc`) {
+                     if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
+
+if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('** You don't have `MANAGE_CHANNELS` permission **');
+           message.channel.overwritePermissions(message.guild.id, {
+         SEND_MESSAGES: true
+
+           }).then(() => {
+               message.reply("**✅ | Done. **")
+           });
+             }
+             
+      
+    
+});
+
+//clear
+
 
 
 //Log
