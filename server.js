@@ -385,9 +385,13 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
 『welcome/ مثل بروبوت اسم روم ولكم』
 『!togglelog/لتفعيل اللوق』
 『!setLog/تحديد روم لوق』
-
-『?اسئلة للعبة فورت نايت /  فورت نايت 』
+『!profile/اسئلة للعبة فورت نايت  』
+=================================
+Discord: Ex |FRÒSTY ま#2819
+YouTube: FROSTY/مجحفلهم 
+=================================
 **
+
    
 `]
     let page = 1;
